@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 
 const Form = props => {
-    const [members, setMembers] = useState({
+   
+    const [member, setMember] = useState({
       name: '',
       email: '',
       role: ''
     });
+
+   
+
     const submitForm = event => {
         event.preventDefault();
-        props.addNewMember(members);
-        setMembers({ name: '', email: '', role: ''})
+        props.addNewMember(member);
+        setMember({ name: '', email: '', role: ''})
     }
     return (
         <form onSubmit={submitForm}>
