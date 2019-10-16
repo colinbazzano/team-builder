@@ -22,7 +22,7 @@ const Form = props => {
             name='name'
             id='name'
             type='text'
-            placeholder='Name'
+            placeholder='Your name here'
             onChange={changeHandler}
             value={member.name}
             required
@@ -32,7 +32,7 @@ const Form = props => {
             name='email'
             id='email'
             type='text'
-            placeholder='Email'
+            placeholder='Your email here'
             onChange={changeHandler}
             value={member.email}
             required
