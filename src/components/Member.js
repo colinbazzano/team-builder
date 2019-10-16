@@ -6,14 +6,14 @@ const Member = props => {
             {props.memberList.map((person, index) => {
                 return (
                     <div className='member' key={index}>
-                        <h1>{person.name}</h1>
+                        <h2>{person.name}</h2>
                         <p>{person.email}</p>
+                        <p>{person.role}</p>
                     </div>
                 );
             })}
         </div>
     );
-
 }
 
 export default Member;

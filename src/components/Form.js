@@ -7,9 +7,9 @@ const Form = props => {
       email: '',
       role: ''
     });
-
-   
-
+    const changeHandler = (event) => {
+        setMember({...member, [event.target.name]: event.target.value})
+    }
     const submitForm = event => {
         event.preventDefault();
         props.addNewMember(member);
@@ -23,6 +23,9 @@ const Form = props => {
             id='name'
             type='text'
             placeholder='Name'
+            onChange={changeHandler}
+            value={member.name}
+            required
             />
             <label htmlFor='email'>Email</label>
             <input 
@@ -30,15 +33,21 @@ const Form = props => {
             id='email'
             type='text'
             placeholder='Email'
+            onChange={changeHandler}
+            value={member.email}
+            required
             />
             <label htmlFor='role'>Role</label>
-            <select name="role">
-                <option selected value="1">Role</option>
-                <option value="2">Second Value</option>
-                <option value="3">Third Value</option>
+            <select onChange={changeHandler} name="role" required >
+                <option value=''>Select Your Role</option>
+                <option value={member.role1}>Frontend Engineer</option>
+                <option value={member.role2}>Backend Engineer</option>
+                <option value={member.role3}>Data Scientist</option>
+                <option value={member.role4}>CSS Specialist</option>
+                <option value={member.role5}>React God</option>
+                <option value={member.role6}>Designer</option>
             </select>
             <button type="submit">Add Member</button>
-
         </form>
     );
 }
